@@ -3,6 +3,8 @@
     --main-bg: #f6f7fb;
     --line-color: #e0e0e0;
     --step-text-color: #999;
+    --submit-button-color: rgb(57, 166, 68);
+    --submit-button-disabled-color: rgb(164, 206, 168);
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
@@ -15,7 +17,7 @@
 
 .btns {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .btn {
@@ -24,7 +26,7 @@
     font-weight: 700;
     padding: 0.5rem 1.5rem;
     display: inline;
-    margin: 0 1rem;
+    margin: 0 0.5rem;
     background: var(--blue-color);
     color: #fff;
     border: 0;
@@ -36,10 +38,23 @@
 }
 
 .btn:disabled {
-    background: var(--line-color);
     cursor: not-allowed;
     transform: none;
 }
+
+.nav-btn.btn:disabled {
+    background: var(--line-color);
+}
+
+.submit-btn {
+    background: var(--submit-button-color);
+}
+
+.submit-btn:disabled {
+    background: var(--submit-button-disabled-color);
+}
+
+
 
 .container {
     font-family: 'Mulish', sans-serif;
@@ -49,10 +64,11 @@
     align-items: center;
     min-height: 100vh;
     background: var(--main-bg);
+    line-height: 1.6;
 }
 
 .progress-container {
-    width: 30vw;  
+    width: 40vw;  
 }
 
 .steps-container {
@@ -88,8 +104,6 @@
 
 }
 
-
-
 .step-circle {
     padding: 1rem;
     border: var(--line-color) 4px solid;
@@ -105,11 +119,41 @@
 }
 
 
-
-
-
 .step-circle.completed {
     border: var(--blue-color) 4px solid;
 }
 
+#alert {
+    background: var(--submit-button-disabled-color);
+    border: var(--submit-button-color) 2px solid;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1.5rem;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #fff;
+    margin-bottom: 2rem;
+    opacity: 0;
+    transition: 1s ease-in 0.5s;
+}
 
+.show {
+    opacity: 1 !important;
+}
+
+@media (max-width: 992px) {
+    .progress-container {
+        width: 50vw;  
+    }
+}
+
+@media (max-width: 768px) {
+    .progress-container {
+        width: 65vw;  
+    }
+}
+
+@media (max-width: 600px) {
+    .progress-container {
+        width: 90vw;  
+    }
+}
