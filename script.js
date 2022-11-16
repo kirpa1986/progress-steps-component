@@ -32,9 +32,9 @@ function setCurrentStep(currentStep, btn) {
       step.classList.remove("completed");
     }
     if (currentStep === 1) {
-      prevBtn.setAttribute("disabled", true);
+      prevBtn.disabled = true;
     } else {
-      prevBtn.removeAttribute("disabled");
+      prevBtn.disabled = false;
     }
     if (currentStep === numberOfSteps) {
       nextBtn.setAttribute("disabled", true);
@@ -73,8 +73,8 @@ submitBtn.addEventListener('click', ev => {
     steps[numberOfSteps-1].classList.add("completed");
     alertBox.textContent = 'Form has been sucessfully submitted.';
     alertBox.classList.add('show');
-    submitBtn.setAttribute("disabled", true);
-    prevBtn.setAttribute("disabled", true);
+    submitBtn.disabled = true;
+    prevBtn.disabled = true;
 
     setTimeout(() => {
         alertBox.classList.remove('show');
