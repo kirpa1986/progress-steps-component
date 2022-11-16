@@ -4,16 +4,16 @@ const progressLine = document.getElementById('progress-line');
 const nextBtn = document.getElementById('next');
 const prevBtn = document.getElementById('prev');
 
-let currentStep = 4
+let currentStep = 1
 setCurrentStep(currentStep, null);
 
 function setCurrentStep(currentStep, btn) {
     if (btn) {
         if (btn.id === 'next') {
-            getStepCircle(currentStep-1).style.transition = 'border-color 1.5s ease';
+            getStepCircle(currentStep-1).style.transition = 'border-color 1s ease';
         }
         if (btn.id === 'prev') {
-            getStepCircle(currentStep).style.transition = 'border-color 1.5s ease 0.5s';
+            getStepCircle(currentStep).style.transition = 'border-color 1s ease 0.5s';
         }
     }
     const progressWidth = parseFloat(currentStep * 100 / numberOfSteps - 100 / numberOfSteps /2);
